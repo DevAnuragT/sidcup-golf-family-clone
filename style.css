@@ -40,6 +40,10 @@
     z-index: 8;
     transition: all linear 0.4s;
   }
+  #cursor,
+#cursor-blur {
+  pointer-events: none; /* Make cursor elements non-interactive */
+}
   #nav {
     height: 130px;
     width: 100%;
@@ -49,16 +53,24 @@
     gap: 50px;
     position: fixed;
     justify-content: flex-start;
-    z-index: 99;
+    z-index: 20; /* Set a high z-index to keep it above other elements */
   }
-  #nav img {
-    height: 4.8vw;
-  }
+  
   #nav h4 {
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
     font-size: 1rem;
+    position: relative;
+    z-index: 21; /* Ensure it stays above #cursor */
+    transition: color 0.3s ease; /* Add a transition for smoother hover effect */
+  }
+  
+  #nav h4:hover {
+    color: #95c11e;
+  }
+  #nav img {
+    height: 4.8vw;
   }
   video {
     height: 100%;
@@ -374,4 +386,35 @@
   height: 100%;
   object-fit: cover;
   width: 15%;
+}
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+#page3 > p {
+  font-size: 3.8vmin;
+  text-transform: uppercase;
+  font-weight: 800;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+}
+
+#page3 img {
+  position: absolute;
+  height: 6vmin;
+}
+#page3 #colon1 {
+  left: 15%;
+  top: 20%;
+}
+#page3 #colon2 {
+  bottom: 20%;
+  right: 15%;
 }
