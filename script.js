@@ -173,3 +173,16 @@ gsap.from("#colon2", {
       scrub: 4
   }
 });
+
+gsap.from("#page4 h1", {
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+      trigger: "#page4 h1",
+      scroller: "body",
+      start: "top 75%",
+      end: "top 70%",
+      scrub: 3
+  }
+})
