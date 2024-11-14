@@ -21,6 +21,10 @@
   body {
     overflow-x: hidden;
   }
+  *::selection {
+    background-color: #fff;
+    color: #95c11e;
+  }
   #cursor {
     height: 20px;
     width: 20px;
@@ -33,7 +37,7 @@
   #cursor-blur {
     height: 450px;
     width: 450px;
-    background-color: rgba(150, 193, 30, 0.375);
+    background-color: rgba(150, 193, 30, 0.313);
     border-radius: 50%;
     position: fixed;
     filter: blur(80px);
@@ -96,6 +100,7 @@
     padding: 0 150px;
     z-index: 10;
     cursor: default;
+    position: relative;
   }
   #page1 h1 {
     line-height: 0.9;
@@ -135,6 +140,32 @@
     text-align: center;
     position: relative;
     z-index: 9;
+  }
+
+  #page1 #arrow {
+    height: 12rem;
+    width: 12rem;
+    background-color: transparent;
+    border: 2px solid #95c11e;
+    color: #95c11e; /* Adjust color if necessary */
+    position: absolute;
+    display: flex;
+    left: -3%; 
+    bottom: 0; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+    z-index: 15; /* Ensure it's above other elements */
+}
+
+  #page1 #arrow i {
+    font-size: 50px;
+    font-weight: 100;
+  }
+  #page1 #arrow:hover {
+    scale: 0.4;
+    background-color: #95c11e;
   }
 
   #page2 {
@@ -427,6 +458,7 @@
   justify-content: center;
   gap: 70px;
   position: relative;
+  z-index: 10;
 }
 .elem {
   height: 70%;
@@ -434,6 +466,7 @@
   overflow: hidden;
   border-radius: 20px;
   position: relative;
+  z-index: 10;
 }
 
 .elem h2 {
@@ -447,8 +480,8 @@
   justify-content: center;
   font-size: 5vmin;
   position: absolute;
-  z-index: 10;
   text-align: center;
+  z-index: 10;
 }
 .elem img {
   height: 100%;
@@ -462,10 +495,11 @@
   color: #fff;
   background-color: transparent;
   cursor: default;
+  z-index: 10;
 }
 .elem:hover img {
   scale: 1;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 #page4 h1{
@@ -477,4 +511,67 @@
   color: #000;
   text-transform: uppercase;
   -webkit-text-stroke: 1px #fff;
+  z-index: 8;
+}
+
+#page4 h1::selection{
+  background-color: #fff;
+  color: #000;
+}
+
+#footer {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6.5vw;
+  padding: 0 100px;
+}
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+}
+#f1,
+#f2,
+#f3,
+#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+  /* background-color: red; */
+}
+
+#f3 h3,#f2 h3 {
+  font-size: 3.8vmin;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+#f4 h4 {
+  font-size: 1vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+
+#f4 h3{
+  font-size: 2.5vmin;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
 }

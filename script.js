@@ -3,6 +3,7 @@ var curB = document.querySelector("#cursor-blur");
 var cardsContainer = document.getElementById('cards-container');
 var cards = document.querySelectorAll('.card');
 var navH4 = document.querySelectorAll("#nav h4");
+const arrow = document.getElementById('arrow');
 
 let mouseX = 0;
 let mouseY = 0;
@@ -186,3 +187,8 @@ gsap.from("#page4 h1", {
       scrub: 3
   }
 })
+
+arrow.addEventListener('click', function () {
+  const page2 = document.getElementById('page2');
+  page2.scrollIntoView({ behavior: 'smooth' });
+});
