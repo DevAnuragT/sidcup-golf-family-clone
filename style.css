@@ -427,6 +427,8 @@
   align-items: center;
   position: relative;
   justify-content: center;
+  overflow: hidden;
+  transition: transform 0.1s ease-out;
 }
 #page3 > p {
   font-size: 3.8vmin;
@@ -449,6 +451,7 @@
   bottom: 20%;
   right: 15%;
 }
+
 
 #page4 {
   height: 30vh;

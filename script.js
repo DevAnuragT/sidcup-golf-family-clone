@@ -192,3 +192,28 @@ arrow.addEventListener('click', function () {
   const page2 = document.getElementById('page2');
   page2.scrollIntoView({ behavior: 'smooth' });
 });
+
+document.addEventListener("mousemove", (e) => {
+  const page3 = document.getElementById("quote-floating");
+  
+  // Get mouse position relative to the viewport
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  // Calculate the center of the page (or the element you want to move)
+  const pageCenterX = window.innerWidth / 2;
+  const pageCenterY = window.innerHeight / 2;
+
+  // Calculate the mouse's movement relative to the center of the page
+  const deltaX = (mouseX - pageCenterX) / pageCenterX;
+  const deltaY = (mouseY - pageCenterY) / pageCenterY;
+
+  // Apply the movement in the opposite direction with a smaller multiplier for a 'floating' effect
+  const movementStrength = 20; // Controls the intensity of the floating effect
+  const movementX = deltaX * movementStrength;
+  const movementY = deltaY * movementStrength;
+
+  // Apply the transformation to the page (slightly move the page in the opposite direction)
+  page3.style.transform = `translate3d(${-movementX}px, ${-movementY}px, 0)`;
+
+});
